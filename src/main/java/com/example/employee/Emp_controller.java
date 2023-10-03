@@ -20,6 +20,12 @@ public class Emp_controller {
      mongoconnection conn = new mongoconnection();
      MongoCollection<Document> collection = conn.getconn("emp_data");
 
+    @GetMapping("employee/say_hello")
+    public String hello(){
+       return "hello guys";
+
+    }
+
      @GetMapping("employee/{id}")
      public String EmpInfo(@PathVariable String id){
          Bson filter = Filters.eq("id",id);
